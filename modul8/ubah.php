@@ -4,6 +4,7 @@ require 'functions.php';
 
 $id = $_GET["id"];
 $mhs = query("SELECT * FROM siswa where id = $id ")[0];
+
 // cek tombol submit sdh ditekan atau belum
 if(isset($_POST["submit"])) {
 	// cek apakah data berhasil di tambahkan atau tidak

@@ -4,6 +4,7 @@ require 'functions.php';
 
 $id = $_GET["id"];
 
+//perkondisian function hapus
 if(hapus($id) >0 ){
 	echo "
 				<script>

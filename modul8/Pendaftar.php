@@ -1,6 +1,17 @@
 <?php 
+
+    session_start();
+
+    //pengecekan session
+    if (!isset($_SESSION["loginAdmin"])) {
+      header("Location: login.php");
+      exit;
+   }
+
+   //menghubungkan function dan menampilkan semua data siswa
     require "functions.php";
     $data = query("SELECT * FROM siswa");
+
 ?>
 
 
@@ -18,7 +29,9 @@
   </head>
   <body>
  <div class="container">
-     <div class="row mt-5">
+      <a href="index.php" class="btn btn-info mt-2">Kembali</a>
+      <a href="logout.php" class="btn btn-info mt-2">Logout</a>
+     <div class="row mt-3">
      <table class="table">
         <thead>
             <tr>
@@ -37,32 +50,33 @@
       <tbody>
             <tr>
             <th scope="row">1</th>
-            <td><?php echo $dt->nama ?></td>
-            <td><?php echo $dt->alamat ?></td>
+            <td><?= $dt->nama ?></td>
+            <td><?= $dt->alamat ?></td>
             <td><?php 
-              if($dt->JenisKelamin == "l")
-              {
+              // perkondisian JenisKelamin
+              if ($dt->JenisKelamin == "l") {
                 echo "Laki-laki";
-              }elseif($dt->JenisKelamin == "p")
-              {
+              } elseif ($dt->JenisKelamin == "p") {
                 echo "Perempuan";
-              }else{
+              } else {
                 echo "";
               }
-          
             ?></td>
-            <a href=""></a>
-            <td><?php echo $dt->agama ?></td>
-            <td><?php echo $dt->sekolah ?></td>
+            <td><?= $dt->agama ?></td>
+            <td><?= $dt->sekolah ?></td>
             <td>
-            <a href="ubah.php?id=<?php echo $dt->id ?>">Edit</a>
-            <a href="hapus.php?id=<?php echo $dt->id ?>">Delete</a>
+            <a href="ubah.php?id=<?= $dt->id ?>">Edit</a>
+            <a href="hapus.php?id=<?= $dt->id ?>">Delete</a>
             </td>
             </tr>
         </tbody>
+        <!-- menampilkan data table pendaftar -->
+
       <?php endforeach; ?>
+
     </table>
-     </div>
+
+    </div>
  </div>
 
     <!-- Optional JavaScript -->

@@ -1,6 +1,10 @@
 <?php 
+
+//koneksi ke database
 $db = mysqli_connect("localhost", "root", "", "delapan");
 
+
+// function menjalankan perintah/intruksi
 function query($query){
 	global $db;
 	$result = mysqli_query($db, $query);
@@ -13,6 +17,7 @@ function query($query){
 }
 
 
+//function menambahkan data
 function tambah($data){
 	global $db;
 	// ambil data dari tiap elemen dalam form
@@ -32,6 +37,7 @@ function tambah($data){
 	return mysqli_affected_rows($db);
 }
 
+//function mengubah data
 function ubah($data){
 	global $db;
 	$id = $data["id"];
@@ -56,6 +62,7 @@ function ubah($data){
 	return mysqli_affected_rows($db);
 }
 
+//function menghapus data
 function hapus($id){
 	global $db;
 	mysqli_query($db, "DELETE FROM siswa WHERE id = $id");

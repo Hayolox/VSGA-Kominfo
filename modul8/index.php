@@ -8,13 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Materi 8</title>
+    <title>Materi 14</title>
   </head>
   <body>
     
 
   <div class="container">
-    <h3 class="mt-5">Pendaftaran siswa baru</h3> <br>
+    <h3 class="mt-5">Pendaftaran Karyawan Baru</h3> <br>
     <h1>DIGITAL TALENT</h1> <br>
     <h5>Menu</h5><br>
     <ul>
